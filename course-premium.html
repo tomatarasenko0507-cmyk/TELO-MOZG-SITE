@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Индивидуальные тренировки — Елена Спахова</title>
+<meta name="description" content="Индивидуальные тренировки онлайн и очно в Москве: диагностика, подбор упражнений, безопасная нагрузка и персональная работа с телом.">
+
+<style>
+:root {
+  --bg:#f8f4f1;
+  --paper:#fff;
+  --ink:#1f1a17;
+  --muted:#6d625b;
+  --line:#eadfd8;
+  --accent:#b56b49;
+  --accent-dark:#9d593c;
+  --accent-soft:#efe4de;
+  --shadow:0 18px 60px rgba(85,52,35,.08);
+  --radius-xl:34px;
+  --radius-lg:28px;
+  --radius-md:22px;
+  --container:980px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--ink);
+  background:radial-gradient(circle at top, rgba(202,129,93,.14), transparent 34%), var(--bg);
+  line-height:1.6;
+}
+
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 22px}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(12px);
+  background:rgba(248,244,241,.82);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:78px;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:800;
+  font-size:18px;
+}
+
+.brand-mark{
+  width:54px;
+  height:54px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#f2e6df,#f8f2ed);
+  display:grid;
+  place-items:center;
+  color:var(--accent);
+  font-size:22px;
+  flex:0 0 auto;
+}
+
+.brand-sub{
+  display:block;
+  color:var(--muted);
+  font-weight:500;
+  font-size:14px;
+}
+
+.back-link{
+  padding:12px 18px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--line);
+  font-weight:700;
+}
+
+.hero{padding:42px 0 24px}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:34px;
+  align-items:start;
+}
+
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+}
+
+.hero-copy{padding:34px}
+
+.eyebrow{
+  display:inline-flex;
+  padding:10px 14px;
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--accent-dark);
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:clamp(34px,5vw,56px);
+  line-height:1.04;
+  margin:0 0 16px;
+}
+
+h2{
+  font-size:28px;
+  line-height:1.15;
+  margin:0 0 18px;
+}
+
+h3{
+  font-size:21px;
+  line-height:1.2;
+  margin:0 0 10px;
+}
+
+.lead{
+  font-size:20px;
+  color:var(--muted);
+  margin:0 0 22px;
+}
+
+.meta{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin:18px 0 0;
+}
+
+.meta-box{
+  padding:14px 16px;
+  border-radius:18px;
+  background:#fbf8f6;
+  border:1px solid var(--line);
+  min-width:150px;
+}
+
+.meta-label{
+  font-size:12px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.meta-value{
+  font-size:24px;
+  font-weight:800;
+  margin-top:4px;
+}
+
+.hero-media{overflow:hidden}
+
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  min-height:340px;
+}
+
+.section{padding:14px 0}
+
+.section-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.block{padding:30px}
+
+.block p,
+.block li{
+  font-size:18px;
+  color:var(--ink);
+}
+
+.block p{
+  margin:0 0 16px;
+}
+
+.block ul{
+  margin:0;
+  padding-left:24px;
+}
+
+.block li{
+  margin-bottom:12px;
+}
+
+.note{
+  padding:18px 20px;
+  border-radius:18px;
+  background:#fff8f3;
+  border:1px solid #f0dfd3;
+  color:var(--ink);
+  font-size:17px;
+}
+
+.soft-box{
+  padding:20px 22px;
+  border-radius:22px;
+  background:#fbf8f6;
+  border:1px solid var(--line);
+}
+
+.price-card{
+  padding:26px;
+  background:linear-gradient(135deg,#fffaf6,#f7efe9);
+}
+
+.price-row{
+  display:grid;
+  gap:14px;
+}
+
+.price-item{
+  padding:18px 20px;
+  border-radius:20px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+
+.price-label{
+  color:var(--muted);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:6px;
+}
+
+.price-value{
+  font-size:30px;
+  line-height:1.15;
+  font-weight:800;
+  color:var(--accent-dark);
+}
+
+.mail-link{
+  color:var(--accent);
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+.buy-panel{
+  padding:28px;
+  text-align:center;
+  background:linear-gradient(135deg,#fffaf6,#f7efe9);
+}
+
+.buy-panel h2{
+  font-size:34px;
+  margin:0 0 14px;
+}
+
+.buy-panel p{
+  font-size:18px;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.btn-row{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px 26px;
+  border-radius:999px;
+  font-weight:800;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+}
+
+.btn-secondary{
+  background:#fff;
+  border:1px solid var(--line);
+}
+
+.footer{
+  padding:34px 0 48px;
+  color:var(--muted);
+  text-align:center;
+}
+
+@media (max-width:860px){
+  .hero-grid,
+  .section-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-media img{
+    min-height:260px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">
+      <div class="brand-mark">✦</div>
+      <div>Елена Спахова<span class="brand-sub">Умное тело. Здоровый мозг | 40+</span></div>
+    </div>
+    <a class="back-link" href="поправить курсы.html#courses">← Ко всем курсам</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="card hero-copy">
+        <div class="eyebrow">Персональная работа</div>
+        <h1>Индивидуальные тренировки</h1>
+        <p class="lead">
+          Это возможность достичь своих целей самым коротким путём, с учётом особенностей здоровья. Индивидуальный подбор используемых методов и упражнений, уровня нагрузки, скорости изменений. 
+
+        </p>
+        <div class="note">
+          Если вы пока не очень понимаете, с чего начать и какую цель определить как приоритет - рекомендую прийти на диагностическую тренировку
+        </div>
+
+        <div class="btn-row">
+          <a class="btn btn-secondary" href="course-diagnostic.html">
+            Что такое диагностическая тренировка?
+          </a>
+        </div>
+
+        <div class="meta">
+          <div class="meta-box">
+            <div class="meta-label">Формат</div>
+            <div class="meta-value">Онлайн / очно 60 мин.</div>
+          </div>
+          <div class="meta-box">
+            <div class="meta-label">Город</div>
+            <div class="meta-value">Москва</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hero-media">
+        <img src="course-premium2.jpg" alt="Индивидуальные тренировки онлайн и очно в Москве">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-grid">
+      <div class="card block">
+        <h2>Наше сотрудничество может быть организовано в любом удобном для вас режиме</h2>
+        <h2>Например:</h2>
+        <ul>
+          <li>регулярные совместные тренировки (очно или онлайн)</li>
+          <li>периодические (например, раз в 1-2 месяца) встречи очно или онлайн, чтобы отследить прогресс, скорректировать программу и двигаться дальше</li>
+        </ul>
+      </div>
+
+      <div class="card block">
+        <h2>Какими методами я работаю:</h2>
+        <ul>
+          <li>Я работаю не с отдельными мышцами, а со всем телом и нервной системой комплексно.</li>
+          <li>Подбираю то, что будет наиболее эффективным из богатого арсенала пилатеса, фасциальных тренировок, соматики, силовых тренировок, массажа, остеопрактики</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-grid">
+      <div class="card block price-card">
+        <h2>Стоимость</h2>
+        <div class="price-row">
+          <div class="price-item">
+            <div class="price-label">Индивидуальная онлайн-тренировка</div>
+            <div class="price-value">4 500₽</div>
+          </div>
+          <div class="price-item">
+            <div class="price-label">Очная тренировка</div>
+            <div class="price-value">в Москве, условия уточняются индивидуально</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card block">
+        <h2>Если есть сомнения</h2>
+        <div class="soft-box">
+          <p>
+            В случае сомнений —
+            <a class="mail-link" href="mailto:spakhova_ea@mail.ru">напишите мне на почту</a>,
+            обсудим, какой формат подойдёт именно вам.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card buy-panel">
+      <h2>Записаться на индивидуальную тренировку</h2>
+      <p>Напишите мне, и мы выберем удобный формат: онлайн или очно в Москве.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://t.me/Elena_Spakhova" target="_blank" rel="noreferrer">Написать в Telegram</a>
+        <a class="btn btn-secondary" href="поправить курсы.html#courses">Назад к курсам</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer container">© 2026 Елена Спахова</footer>
+
+</body>
+</html>

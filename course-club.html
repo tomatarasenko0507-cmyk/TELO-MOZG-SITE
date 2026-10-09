@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Клуб «Активная Энергия» — Елена Спахова</title>
+<meta name="description" content="Клуб Активная Энергия. Общий текст лендинг.">
+
+<style>
+:root {
+  --bg:#f8f4f1;
+  --paper:#fff;
+  --ink:#1f1a17;
+  --muted:#6d625b;
+  --line:#eadfd8;
+  --accent:#b56b49;
+  --accent-dark:#9d593c;
+  --accent-soft:#efe4de;
+  --shadow:0 18px 60px rgba(85,52,35,.08);
+  --radius-xl:34px;
+  --radius-lg:28px;
+  --radius-md:22px;
+  --container:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--ink);
+  background:radial-gradient(circle at top, rgba(202,129,93,.14), transparent 34%), var(--bg);
+  line-height:1.68;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 22px}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(12px);
+  background:rgba(248,244,241,.82);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:78px;
+  gap:18px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:800;
+  font-size:18px;
+}
+.brand-mark{
+  width:54px;
+  height:54px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#f2e6df,#f8f2ed);
+  display:grid;
+  place-items:center;
+  color:var(--accent);
+  font-size:22px;
+  flex:0 0 auto;
+}
+.brand-sub{
+  display:block;
+  color:var(--muted);
+  font-weight:500;
+  font-size:14px;
+}
+.back-link{
+  padding:12px 18px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--line);
+  font-weight:700;
+}
+
+.hero{padding:42px 0 24px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:34px;
+  align-items:start;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+}
+.hero-copy{padding:34px}
+.eyebrow{
+  display:inline-flex;
+  padding:10px 14px;
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--accent-dark);
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+h1{
+  font-size:clamp(34px,5vw,56px);
+  line-height:1.04;
+  margin:0 0 16px;
+}
+h2{
+  font-size:30px;
+  line-height:1.15;
+  margin:0 0 18px;
+}
+h3{
+  font-size:22px;
+  margin:0 0 14px;
+}
+.lead{
+  font-size:20px;
+  color:var(--muted);
+  margin:0 0 22px;
+}
+.meta{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin:20px 0 0;
+}
+.meta-box{
+  padding:14px 16px;
+  border-radius:18px;
+  background:#fbf8f6;
+  border:1px solid var(--line);
+  min-width:150px;
+}
+.meta-label{
+  font-size:12px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.meta-value{
+  font-size:24px;
+  font-weight:800;
+  margin-top:4px;
+}
+.hero-media{overflow:hidden}
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  min-height:340px;
+}
+
+.section{padding:14px 0}
+.section-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.block{padding:30px}
+.block p,
+.block li{
+  font-size:18px;
+  color:var(--ink);
+}
+.block p{margin:0 0 16px}
+.block ul{
+  margin:0;
+  padding-left:24px;
+}
+.block li{margin-bottom:12px}
+.full-block{padding:34px}
+.note{
+  padding:18px 20px;
+  border-radius:18px;
+  background:#fff8f3;
+  border:1px solid #f0dfd3;
+  color:var(--ink);
+  font-size:17px;
+}
+.soft-box{
+  padding:22px;
+  border-radius:22px;
+  background:#fbf8f6;
+  border:1px solid var(--line);
+}
+.mail-link{
+  color:var(--accent);
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+.buy-panel{
+  padding:34px 28px;
+  text-align:center;
+  background:linear-gradient(135deg,#fffaf6,#f7efe9);
+}
+.buy-panel h2{
+  font-size:34px;
+  margin:0 0 14px;
+}
+.buy-panel p{
+  font-size:18px;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+.btn-row{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px 26px;
+  border-radius:999px;
+  font-weight:800;
+}
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+}
+.btn-secondary{
+  background:#fff;
+  border:1px solid var(--line);
+}
+.footer{
+  padding:34px 0 48px;
+  color:var(--muted);
+  text-align:center;
+}
+
+@media (max-width:860px){
+  .hero-grid,
+  .section-grid{grid-template-columns:1fr}
+  .hero-media img{min-height:260px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">
+      <div class="brand-mark">✦</div>
+      <div>Елена Спахова<span class="brand-sub">Умное тело. Здоровый мозг | 40+</span></div>
+    </div>
+    <a class="back-link" href="поправить курсы.html#courses">← Ко всем курсам</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="card hero-copy">
+        <div class="eyebrow">Клуб с тренировками для людей 40+</div>
+        <h1>Клуб «Активная Энергия»</h1>
+        <p class="lead">Здоровье - это путь. И Клуб делает его проще, легче, доступнее, интереснее.</p>
+        <div class="note">
+          Вы просто выполняете разнообразные тренировки, а потом замечаете, что поясница перестала болеть, кататься на лыжах стало проще, кисти перестали болеть при опоре на них, появилась устойчивость, по лестнице подниматься легче, походка увереннее, плечи расправились...
+        </div>
+        <div class="meta">
+          <div class="meta-box">
+            <div class="meta-label">Формат</div>
+            <div class="meta-value">Онлайн</div>
+          </div>
+          <div class="meta-box">
+            <div class="meta-label">Стоимость подписки за месяц</div>
+            <div class="meta-value">2 200₽</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hero-media">
+        <img src="course-club.jpg" alt="Клуб «Активная Энергия»">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card block full-block">
+      <h2>Клуб "Активная Энергия". Общий текст (лендинг)</h2>
+
+      <p>Я создавала его для тех, кто</p>
+      <ul>
+        <li>🍀хочет всегда иметь силы играть с внуками, гулять в парке, путешествовать</li>
+        <li>🍀надеется на себя, а не только на врачей</li>
+        <li>🍀хочет вспоминать про возраст только, глядя в паспорт</li>
+        <li>🍀стремится сохранить гибкость, силу, выносливость и при этом не навредить позвоночнику и суставам</li>
+        <li>🍀понимает, что противостоять остеопорозу, остеопении и другим возрастным изменениям невозможно без физических нагрузок</li>
+        <li>🍀принял решение заняться собой, но не знает, с чего начать</li>
+        <li>🍀хочет тренироваться в соответствии с собственным графиком и режимом, но под присмотром профессионального тренера</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-grid">
+      <div class="card block">
+        <h2>Клуб - это не курс и не марафон.</h2>
+        <p>Вам не нужно спешить, выполнять все уроки, ругать себя или испытывать чувство вины,  если пропустили занятие.</p>
+        <ul>
+          <li>▪️Вы можете заниматься в своём темпе</li>
+          <li>▪️Вы можете выбирать, сколько времени сегодня посвятить тренировкам: 30 минут, час или сегодня вас хватит только на утреннюю зарядку</li>
+          <li>▪️Вы можете компоновать занятия в соответствии со своими целями и настроением, объединять короткие тренировки в одну большую или чередовать</li>
+        </ul>
+      </div>
+
+      <div class="card block">
+        <h2>При этом</h2>
+        <ul>
+          <li>🌿у вас всегда под рукой грамотные, продуманные разнообразные тренировки</li>
+          <li>🌿вы уверены в безопасности упражнений с учетом ваших особенностей здоровья</li>
+          <li>🌿тренировки закрывают потребности тела в сохранении подвижности суставов и позвоночника - вы чувствуете себя гибкой и легкой</li>
+          <li>🌿 вы сохраняете силу и объем мышц, чтобы защититься от остеопороза и остеопении или замедлить их развитие</li>
+          <li>🌿вы можете месяц за месяцем решать, в том числе, свои "мелкие" (но очень важные) специфические задачи, которым редко уделяется достаточно внимания на обычных тренировках: стопы, кисти, дыхание, тазовое дно, равновесие, баланс</li>
+          <li>🌿 у вас всегда есть, с кем посоветоваться, поделиться результатами, открытиями или сомнениями</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-grid">
+      <div class="card block">
+        <h2>Что вы получаете, присоединяясь к Клубу:</h2>
+        <ul>
+          <li>✔️ 4 новых тренировки еженедельно: одна зарядка на 5-12 минут, 2 коротких тренировки на 30 минут, одна большая тренировка на 50-60 минут</li>
+          <li>✔️доступ ко всем тренировкам последнего месяца</li>
+          <li>✔️доступ к Библиотеке Клуба, где хранятся лучшие тренировки по разным целям</li>
+          <li>✔️инструкции, как можно адаптировать исходные положения для удобства и безопасности</li>
+          <li>✔️чат, где можно уточнить, переспросить, попросить совета или поделиться ощущениями</li>
+          <li>✔️возможность получить персональные рекомендации от меня по вашим целям, отдельным упражнениям или тренировкам</li>
+        </ul>
+      </div>
+
+      <div class="card block">
+        <h2>В течение каждого месяца в Клубе последовательно прорабатываются все основные потребности тела в 40+:</h2>
+        <ul>
+          <li>🌿 подвижность тазобедренных суставов</li>
+          <li>🌿 сила мышц ног и ягодиц</li>
+          <li>🌿 легкость движения рук и лопаток</li>
+          <li>🌿 сила рук и плеч</li>
+          <li>🌿 гибкость позвоночника</li>
+          <li>🌿 сила мышц спины и пресса</li>
+          <li>🌿 сила и подвижность стопы/кистей</li>
+          <li>🌿 координация и баланс/ дыхание/ здоровье тазового дна</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card block full-block">
+      <h2>Здоровье - это путь.</h2>
+      <p>Здоровье - это путь. И Клуб делает его проще, легче, доступнее, интереснее.</p>
+      <p>Вы просто выполняете разнообразные тренировки, а потом замечаете, что поясница перестала болеть, кататься на лыжах стало проще, кисти перестали болеть при опоре на них, появилась устойчивость, по лестнице подниматься легче, походка увереннее, плечи расправились...</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-grid">
+      <div class="card block">
+        <h2>Какие результаты вы получаете:</h2>
+        <ul>
+          <li>🍀 игра с детьми, прогулки, путешествия без боли в спине и суставах</li>
+          <li>🍀улучшение самочувствия и здоровья без лишних таблеток</li>
+          <li>🍀гибкое, сильное, выносливое тело</li>
+          <li>🍀здоровые суставы и позвоночник</li>
+          <li>🍀профилактика или остановка развития остеопороза, остеопении</li>
+          <li>🍀поддержание активности работы мозга, защита от деменции.</li>
+        </ul>
+      </div>
+
+      <div class="card block">
+        <h2>Что внутри Клуба:</h2>
+        <ul>
+          <li>✔️4 профессионально продуманных новых тренировки еженедельно: 1 зарядка, 2 коротких тренировки, 1 большая тренировка</li>
+          <li>✔️доступ ко всем тренировкам последнего месяца</li>
+          <li>✔️доступ к Библиотеке Клуба</li>
+          <li>✔️доступ к чату, чтобы спросить или поделиться</li>
+          <li>✔️возможность получить персональные рекомендации от меня.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-grid">
+      <div class="card block">
+        <h2>Кому не подойдёт:</h2>
+        <ul>
+          <li>🔻острые состояния</li>
+          <li>🔻ограничение на движение от врача</li>
+          <li>🔻менее 6 месяцев после травмы</li>
+        </ul>
+      </div>
+
+      <div class="card block">
+        <h2>Если есть сомнения</h2>
+        <p>В случае сомнений - <a class="mail-link" href="mailto:spakhova_ea@mail.ru">напишите мне</a>, обсудим</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card buy-panel">
+      <h2>Присоединяйтесь к Клубу</h2>
+      <p>Когда будете готовы, нажмите кнопку ниже.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://t.me/SpakhovaElena_bot" target="_blank" rel="noreferrer">Купить в Telegram-боте</a>
+        <a class="btn btn-secondary" href="поправить курсы.html#courses">Назад к курсам</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer container">© 2026 Елена Спахова</footer>
+
+</body>
+</html>

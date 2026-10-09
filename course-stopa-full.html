@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проблемы стопы. Пошаговый алгоритм</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{
+  --bg:#faf8f5;
+  --paper:#ffffff;
+  --ink:#222;
+  --muted:#666;
+  --line:#e6e1da;
+  --accent:#6f8d7f;
+  --accent-dark:#5f7b6e;
+  --note:#fff7df;
+  --must-bg:#fff3f3;
+  --must-line:#f0caca;
+  --choice-bg:#eef8f1;
+  --choice-line:#cfe3d5;
+  --later-bg:#f7f4ff;
+  --later-line:#ddd7f0;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  max-width:1040px;
+  margin:0 auto;
+  padding:24px;
+  line-height:1.8;
+  color:var(--ink);
+  background:var(--bg);
+}
+h1,h2,h3{line-height:1.2}
+h1{font-size:46px;margin:0 0 12px}
+h2{font-size:34px;margin:0 0 14px}
+h3{font-size:24px;margin:26px 0 12px}
+p{margin:12px 0;font-size:18px}
+a{color:inherit}
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:26px;
+  margin:22px 0;
+  box-shadow:0 10px 28px rgba(0,0,0,0.04);
+}
+.hero{
+  text-align:center;
+  background:linear-gradient(135deg,#fffaf5,#f7f3ee);
+}
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff !important;
+  padding:13px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 6px 16px rgba(111,141,127,.18);
+}
+.btn.secondary{
+  background:#fff;
+  color:var(--ink) !important;
+  border:1px solid var(--line);
+  box-shadow:none;
+}
+.req{color:#c0392b;font-weight:bold}
+.must{
+  background:var(--must-bg);
+  border:1px solid var(--must-line);
+  border-radius:16px;
+  padding:16px 18px;
+  margin:18px 0;
+}
+.choice{
+  background:var(--choice-bg);
+  border:1px solid var(--choice-line);
+  border-radius:16px;
+  padding:16px 18px;
+  margin:18px 0;
+}
+.later{
+  background:var(--later-bg);
+  border:1px solid var(--later-line);
+  border-radius:16px;
+  padding:16px 18px;
+  margin:18px 0;
+}
+.note{
+  background:var(--note);
+  border-left:4px solid #ffcc00;
+  border-radius:12px;
+  padding:14px 16px;
+  margin:16px 0;
+}
+.video{
+  background:#f7f6f4;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+  margin:14px 0;
+}
+.video p{margin:6px 0 0;font-size:16px;color:var(--muted)}
+img{
+  width:100%;
+  display:block;
+  border-radius:16px;
+  margin:16px 0;
+  border:1px solid var(--line);
+}
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(250,248,245,.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  padding:12px 0;
+}
+nav a{
+  display:inline-block;
+  padding:8px 12px;
+  margin-right:8px;
+  border-radius:999px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:14px;
+}
+nav a:hover{background:#fff;color:var(--ink)}
+.highlight{
+  background:#fff1a8;
+  padding:3px 7px;
+  border-radius:8px;
+  display:inline;
+}
+.contacts a{
+  display:inline-block;
+  margin:8px 10px 0 0;
+  padding:10px 14px;
+  border-radius:10px;
+  background:#f7f4f1;
+  border:1px solid var(--line);
+  text-decoration:none;
+}
+.final{
+  text-align:center;
+  background:linear-gradient(135deg,#fffaf5,#f7f3ee);
+}
+.final strong{
+  font-size:30px;
+  display:block;
+  line-height:1.35;
+}
+.small{font-size:15px;color:var(--muted)}
+@media (max-width:760px){
+  body{padding:14px}
+  h1{font-size:40px}
+  h2{font-size:30px}
+  h3{font-size:22px}
+  p{font-size:17px}
+  .card{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#safety">Техника безопасности</a>
+  <a href="#work">Как работать</a>
+  <a href="#hallux">Халюс вальгус</a>
+  <a href="#flatfoot">Плоскостопие</a>
+  <a href="#fasciitis">Фасциит</a>
+  <a href="#arthrosis">Артроз</a>
+  <a href="#taylor">Тейлор</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
+<div class="card hero">
+  <h1>Проблемы стопы — пошаговый алгоритм</h1>
+  <p><strong>Пошаговый план по решению различных проблем стопы через движение.</strong></p>
+  <p>Я собрала для вас понятную и бережную систему работы со стопой: от оценки состояния и техники безопасности — до выбора нужной проблемы и ежедневной практики.</p>
+  <div style="margin-top:22px">
+    <a href="#safety" class="btn">Перейти к технике безопасности</a>
+    <a href="#work" class="btn secondary" style="margin-left:10px">Как работать с пошаговым алгоритмом</a>
+  </div>
+</div>
+
+<div class="card" style="text-align:center;padding:32px;background:linear-gradient(135deg,#fffaf5,#f7f3ee);">
+  <div style="font-size:22px;line-height:1.6;margin-bottom:12px;">
+    Если вы не нашли здесь свою проблему — напишите, пожалуйста
+  </div>
+  <div style="font-size:19px;color:#6b6b6b;margin-bottom:18px;">
+    Я постараюсь помочь и подсказать, с чего начать именно вам
+  </div>
+  <div style="font-size:19px;margin-bottom:22px;">
+    <strong>Знайте, я всегда на связи</strong><br>
+    для ваших вопросов, пожеланий, наблюдений и обратной связи
+  </div>
+  <a href="mailto:spakhova_ea@mail.ru" class="btn" style="background:linear-gradient(135deg,#8f6f5a,#6f8d7f)">✉️ Написать на почту</a>
+  <div class="small" style="margin-top:14px;">spakhova_ea@mail.ru</div>
+</div>
+
+<div id="safety" class="card">
+  <h2><strong>Техника безопасности</strong></h2>
+  <p><span class="req">❗️</span> "Пошаговый алгоритм" касается только упражнений и движения. Он не заменяет и не отменяет рекомендации врачей.</p>
+  <p>При усилении болевых симптомов или при постоянной боли обязательно обратитесь к врачу-ортопеду.</p>
+  <p>1. Будьте бережны к себе. Двигайтесь и воздействуйте на стопу без боли, без нарастания дискомфорта.</p>
+  <p>2. Не стремитесь сделать максимум за один раз. Амплитуду наращивайте постепенно от раза к разу, от месяца к месяцу.</p>
+  <p>3. Силовые упражнения выполняйте до ощущения легкой усталости мышц, но без дискомфорта и боли.</p>
+  <p>4. Наблюдайте за ощущениями не только во время выполнения упражнений, но и после. Неприятные ощущения, если они возникают после упражнений, не должны превышать 2–3 баллов из 10 и должны пройти в течение суток.</p>
+  <p>В противном случае — уменьшайте количество повторений, частоту выполнения или вернитесь к предыдущему варианту упражнения, где это возможно.</p>
+</div>
+
+<div id="work" class="card">
+  <h2><strong>Как работать с пошаговым алгоритмом</strong></h2>
+
+  <p><strong>Предварительный Шаг</strong><br>Ознакомиться с техникой безопасности.</p>
+
+  <p><strong>Шаг 1</strong><br>
+  Оцените состояние стоп на сегодня. Хорошо сделать фото. Ответьте себе на вопросы (можно записать):<br>
+  ▪️ что беспокоит больше всего<br>
+  ▪️ если есть боль/дискомфорт, то при какой или после какой нагрузки, оцените боль по 10-балльной шкале (записать все виды нагрузки, при которых появляется боль/дискомфорт)<br><br>
+  Например, стопа начинает болеть после 15 минут ходьбы на 5 баллов из 10<br><br>
+  ▪️ какие движения, виды нагрузки вы хотели бы использовать в жизни, которые сейчас невозможны из-за стопы<br><br>
+  Например, хочу ходить на каблуках, но болит пятка
+  </p>
+
+  <p>Эти ответы очень важны. Результаты будут постепенными, без быстрого "Вау, всё прошло!" (хотя и такое может быть))) Важно отмечать малейший прогресс на этом пути. Это мотивирует вас и подсвечивает мозгу важность работы.</p>
+
+  <p><span class="highlight"><strong>Где внимание — там энергия. Где энергия — там результаты.</strong></span></p>
+
+  <p><strong>Шаг 2</strong><br>Выберите проблему, которую хотите решить.</p>
+
+  <div class="card" style="background:#fcfbfa">
+    <strong>Список проблем</strong>
+    <ul>
+      <li><a href="#hallux">Халюс вальгус</a></li>
+      <li><a href="#flatfoot">Плоскостопие</a></li>
+      <li><a href="#fasciitis">Плантарный фасциит / пяточная шпора</a></li>
+      <li><a href="#arthrosis">Артроз</a></li>
+      <li><a href="#taylor">Деформация Тейлора</a></li>
+    </ul>
+  </div>
+
+  <p><strong>Шаг 3</strong><br>Ознакомьтесь со схемой работы, пройдите тесты, при необходимости.</p>
+
+  <div class="note"><span class="req">❗️</span> Залог результата — ЕЖЕДНЕВНАЯ работа со стопой. Я понимаю, что это сложно, поэтому выделила обязательные упражнения восклицательным знаком (<span class="req">❗️</span> — вот таким). Даже если устали, даже если перед сном уже вспомнили, что не сделали — сделайте, это займёт всего пару минут.</div>
+
+  <p>Остальные упражнения тоже важны, выполняйте их хотя бы 3 раза в неделю. Можно не подряд, как комплекс, а точечно в течение дня: здесь 2–3 минуты + там 2–3 минуты + вечером пару минут = результат.</p>
+
+  <p><strong>Шаг 4</strong><br>Приступайте к выполнению упражнений. Сделайте первое прямо сейчас — почему нет?🙂</p>
+
+  <p><strong>Шаг 5</strong><br>Делитесь результатами, задавайте вопросы.</p>
+
+  <p>Если вдруг всё забросили — начните с того места, где остановились или заново. Не ругайте себя, просто продолжайте. <strong>Результаты будут обязательно.</strong></p>
+</div>
+
+<div id="hallux" class="card">
+  <h2>Халюс вальгус</h2>
+  <img src="hallux.jpg" alt="Халюс вальгус">
+  <p>Это, пожалуй, самая распространённая и самая досаждающая проблема стопы.</p>
+  <p>Характеризуется отклонением первой плюсневой кости медиально (к центральной линии тела) и, как следствие, смещением большого пальца стопы латерально (наружу).</p>
+  <p>Вернуть плюсневую кость на место мы с вами не можем. Но можем стабилизировать большой палец стопы, вернуть его в опору. Можем более равномерно перераспределить нагрузку на суставы стопы, что позволит:<br>
+  ✔️ снизить или совсем убрать боль<br>
+  ✔️ остановить прогрессирование деформации<br>
+  ✔️ улучшить питание тканей, выработку синовиальной ("смазочной") жидкости в суставах ног<br>
+  ✔️ противостоять снижению эластичности связок с возрастом</p>
+
+  <h3>Этап I. Цель — вернуть подвижность пальцам, особенно первому пальцу стопы</h3>
+
+  <div class="must">
+    <strong>❗️ Обязательно каждый день</strong><br>
+    Упражнения, отмеченные восклицательным знаком (<span class="req">❗️</span>), выполняются каждый день.<br>
+    Остальные упражнения тоже важны и выполняются хотя бы три раза в неделю.<br>
+    Можно не подряд, а точечно в течение дня: 1–2 минуты утром, 1–2 минуты днём, 1–2 минуты вечером = результат.
+  </div>
+
+  <div class="video"><strong>1) <span class="req">❗️</span> Массаж стоп</strong><p>Предпочтительнее массаж руками. Можно иногда заменять массажем с помощью дополнительного оборудования.</p><a class="btn" href="https://kinescope.io/akKHTekmcjRTHYjcUMjczf" target="_blank">Смотреть видео: руками</a> <a class="btn secondary" href="https://kinescope.io/dWH8jQAo8DivUvXeTZa4Bs" target="_blank">Смотреть видео: оборудование</a></div>
+  <div class="video"><strong>2) <span class="req">❗️</span> Пассивное (за счет рук) движение большого пальца стопы</strong><br><a class="btn" href="https://kinescope.io/kBaijuzE1ziBm8qTgXzbfd" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>3) Укрепление сгибателей пальцев + стабилизация большого пальца в приведении</strong><br><a class="btn" href="https://kinescope.io/2xKojhZGvk1Bef8fJwNyHk" target="_blank">Смотреть видео</a></div>
+
+  <p><span class="req">❗️</span> Важно! Выполните Тест 1. Если тест не пройден (критерии в видео), добавьте в ежедневную практику упражнение:</p>
+
+  <div class="video"><strong>5) <span class="req">❗️</span> Стабилизация переднего отдела стопы (укрепление малоберцовых мышц)</strong><br><a class="btn" href="https://kinescope.io/9iv1nhTwL9mVJAxZ9T6eWr" target="_blank">Смотреть видео</a></div>
+
+  <h3>III этап. Закрепление результата</h3>
+  <p>Переходим к этому этапу, когда отработаны упражнения 2) и 3) предыдущего этапа во всех вариантах с выполнением до 20 повторов.</p>
+
+  <div class="must">
+    <strong>❗️ Обязательно каждый день</strong><br>
+    Упражнения, отмеченные восклицательным знаком (<span class="req">❗️</span>), выполняются каждый день.<br>
+    Остальные упражнения тоже важны и выполняются хотя бы три раза в неделю.<br>
+    Можно не подряд, а точечно в течение дня: 1–2 минуты утром, 1–2 минуты днём, 1–2 минуты вечером = результат.
+  </div>
+
+  <div class="video"><strong>1) <span class="req">❗️</span> Подъём на носки с опорой на большой палец</strong><br><a class="btn" href="https://kinescope.io/gaQfX5waJfyjLtjNUqYTCG" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>2) <span class="req">❗️</span> Укрепление сгибателей стопы ("узкая стопа")</strong><br><a class="btn" href="https://kinescope.io/amgmL7beLtFyCDTXuecBEv" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>3) Функциональное упражнение 5 (на стабилизацию голеностопа и свода стопы)</strong><br><a class="btn" href="https://kinescope.io/m1uTDVCvExRjVBVtREa9x9" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>4) Функциональное упражнение 1 (фаза отталкивания)</strong><br><a class="btn" href="https://kinescope.io/pMwPTXTsQmPqfvVgRJB8CR" target="_blank">Смотреть видео</a></div>
+
+  <p>Как только это упражнение отработано — вы просто осознаете такое отталкивание в ходьбе, в каждом шаге — тогда делать упражнение отдельно уже не будет необходимости.</p>
+  <p>Двигайтесь с удовольствием и будьте здоровы 💕</p>
+</div>
+
+<div id="flatfoot" class="card">
+  <h2>Плоскостопие</h2>
+  <img src="flatfoot.jpg" alt="Плоскостопие">
+  <p>В литературе понятие и дифференцирование плоскостопия заметно отличается в разных источниках.</p>
+  <p>Здесь мы будем рассматривать плоскостопие как уплощение продольного свода стопы, сопровождаемое смещением пяточной кости кнаружи.</p>
+  <p>Основные значимые для нас виды плоскостопия — это мобильное и ригидное. Чтобы понять, какое у вас — пройдите Тест 2.</p>
+  <p>При любом виде плоскостопия упражнения показаны и эффективны. При мобильном плоскостопии результаты вы почувствуете и увидите быстрее. При ригидном плоскостопии эффект от упражнений ограничен и проявится скорее в ощущениях, чем визуально:<br>
+  ✔️ снижение или снятие боли<br>
+  ✔️ исчезновение или уменьшение (при ригидном плоскостопии) тяжести, усталости в ногах к концу дня<br>
+  ✔️ улучшение питания тканей и суставов стопы<br>
+  ✔️ профилактика и замедление развития заболеваний стопы, в частности артрозов и пяточной шпоры<br>
+  ✔️ уменьшение и более равномерное распределение нагрузки на вышележащие суставы: колени, тазоберденные суставы, поясницу</p>
+  <p>При мобильном плоскостопии со временем можно совсем отказаться от стелек, которые вы, возможно, носите для выравнивания стопы и корректировки нагрузки на колени и тазобедренные суставы.</p>
+
+  <h3>I этап. Общая подвижность стопы, эластичность тканей стопы</h3>
+
+  <div class="must">
+    <strong>❗️ Обязательно каждый день</strong><br>
+    Упражнения, отмеченные восклицательным знаком (<span class="req">❗️</span>), выполняются каждый день.<br>
+    Остальные упражнения тоже важны и выполняются хотя бы три раза в неделю.<br>
+    Можно не подряд, а точечно в течение дня: 1–2 минуты утром, 1–2 минуты днём, 1–2 минуты вечером = результат.
+  </div>
+
+  <div class="video"><strong>1) Массаж стоп</strong><p>Предпочтительнее массаж руками. Можно иногда заменять массажем с помощью дополнительного оборудования (особенно обратите внимание на массаж с помощью палочки).</p><a class="btn" href="https://kinescope.io/akKHTekmcjRTHYjcUMjczf" target="_blank">Смотреть видео: руками</a> <a class="btn secondary" href="https://kinescope.io/dWH8jQAo8DivUvXeTZa4Bs" target="_blank">Смотреть видео: оборудование</a></div>
+  <div class="video"><strong>2) Скольжение подошвенной фасции</strong><br><a class="btn" href="https://kinescope.io/uuB3JithWgfbNVHPygh5sr" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>3) <span class="req">❗️</span> Подвижность голеностопа и средней части стопы</strong><br><a class="btn" href="https://kinescope.io/oi6UsURdxxmAvPkRFAfQnv" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>4) <span class="req">❗️</span> Активное сгибание - разгибание пальцев</strong><br><a class="btn" href="https://kinescope.io/49aLSxgpvjjXzMX7Q8cZuq" target="_blank">Смотреть видео</a></div>
+
+  <p><span class="req">❗️</span> Важно! Если пальцы не двигаются, как требуется в упражнении — вы начинаете отсюда👇</p>
+  <div class="video"><strong><span class="req">❗️</span> Пассивное (за счет рук) движение пальцев стопы</strong><br><a class="btn" href="https://kinescope.io/kBaijuzE1ziBm8qTgXzbfd" target="_blank">Смотреть видео</a></div>
+  <p>Выполняете его для всех "непослушных" пальцев и постепенно переходите к выполнению основного упражнения.</p>
+
+  <h3>II этап. Укрепление свода стопы и стабилизация свода в динамике</h3>
+  <p>Переходим к этому этапу, когда отработаны упражнения 3) и 4) предыдущего этапа с повтором до 20 раз.</p>
+  <p>Выполните Тест 3 на силу сгибателей пальцев. Если тест пройден (вы уверенно удержание ленту) переходите к упражнению 2). Если тест не пройден, начинаем с упражнения 1).</p>
+
+  <div class="choice"><strong>Обязательно ежедневно: одно упражнение на выбор</strong><br><span class="req">❗️</span> Чередуйте выполнение упражнений 1), 2) и 3). Выполняйте одно из них, но каждый день.</div>
+
+  <div class="video"><strong>1) Сила сгибателей пальцев</strong><br><a class="btn" href="https://kinescope.io/0JrKNxaErp1vYVCAvxTbk6" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>2) Укрепление сгибателей стопы ("узкая стопа")</strong><br><a class="btn" href="https://kinescope.io/amgmL7beLtFyCDTXuecBEv" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>3) Сила всех сгибателей пальцев</strong><br><a class="btn" href="https://kinescope.io/ud87EVZvychBR2yJfZLvm1" target="_blank">Смотреть видео</a></div>
+
+  <div class="choice"><strong>Обязательно ежедневно: одно упражнение на выбор</strong><br><span class="req">❗️</span> Чередуйте упражнения 4), 5), 6). Выполняйте хотя бы одно из них, но каждый день. Когда отработаете их по отдельности — соединяем!🔥 Выполняем упражнение 4) и 5) из исходного положения упражнения 6) (с лентой на голени).</div>
+
+  <div class="video"><strong>4) Функциональное упражнение 3. Подвижность средней части стопы в динамике</strong><br><a class="btn" href="https://kinescope.io/p8kSP7xx2qtfgEfBssLN6h" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>5) Функциональное упражнение 5 (на стабилизацию голеностопа и свода стопы)</strong><br><a class="btn" href="https://kinescope.io/m1uTDVCvExRjVBVtREa9x9" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>6) Функциональное упражнение 4. Стабильность стопы</strong><br><a class="btn" href="https://kinescope.io/vdaaMBAV35rcFpZdGv9qC2" target="_blank">Смотреть видео</a></div>
+
+  <p><span class="req">❗️</span> Важно! Выполните Тест 1. Если тест не пройден (критерии в видео), добавьте в практику упражнение:</p>
+  <div class="video"><strong>7) <span class="req">❗️</span> Стабилизация переднего отдела стопы (Вариант А)</strong><br><a class="btn" href="https://kinescope.io/9iv1nhTwL9mVJAxZ9T6eWr" target="_blank">Смотреть видео</a></div>
+
+  <p>Идеально выполнять упражнения 7) и 5) последовательно, стабилизируя стопу и с внутренней и с внешней стороны.</p>
+  <p>Двигайтесь с удовольствием и будьте здоровы💕</p>
+</div>
+
+<div id="fasciitis" class="card">
+  <h2>Плантарный фасциит. Пяточная шпора</h2>
+  <img src="fasciitis.jpg" alt="Плантарный фасциит">
+  <p>Плантарный фасциит — это воспаление фасции при её травмировании. Проявляется чаще как боль в области пятки, реже боль возникает по самой подошве стопы.</p>
+  <p>На фоне плантарного фасциита со временем могут образоваться костные разрастания — пяточные шпоры.</p>
+
+  <div class="must">
+    <strong>❗️ Обязательно каждый день</strong><br>
+    Упражнения, отмеченные восклицательным знаком (<span class="req">❗️</span>), выполняются каждый день.<br>
+    Остальные упражнения тоже важны и выполняются хотя бы три раза в неделю.<br>
+    Можно не подряд, а точечно в течение дня: 1–2 минуты утром, 1–2 минуты днём, 1–2 минуты вечером = результат.
+  </div>
+
+  <p><span class="req">❗️</span> Важно! При выполнении упражнений будьте особенно внимательны к своим ощущениям. Двигайтесь без нарастания болевых ощущений, плавно, амплитуду увеличивайте постепенно.</p>
+  <p>При нарастании боли или постоянных болевых ощущениях — консультация врача обязательна.</p>
+
+  <div class="video"><strong>1) <span class="req">❗️</span> Массаж стоп</strong><p>Выбирайте любые доступные варианты: руками или с помощью дополнительного оборудования.</p><a class="btn" href="https://kinescope.io/akKHTekmcjRTHYjcUMjczf" target="_blank">Смотреть видео: руками</a> <a class="btn secondary" href="https://kinescope.io/dWH8jQAo8DivUvXeTZa4Bs" target="_blank">Смотреть видео: оборудование</a></div>
+  <div class="video"><strong>2) <span class="req">❗️</span> Подвижность голеностопа и средней части стопы</strong><br><a class="btn" href="https://kinescope.io/oi6UsURdxxmAvPkRFAfQnv" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>3) Скольжение подошвенной фасции</strong><br><a class="btn" href="https://kinescope.io/uuB3JithWgfbNVHPygh5sr" target="_blank">Смотреть видео</a></div>
+
+  <div class="later"><strong>По мере снижения болевых ощущений: функциональные упражнения, которые можно чередовать</strong><br>
+  В один день одно — в другой другое, если оба безболезненны.</div>
+
+  <div class="video"><strong>4) Функциональное упражнение 4</strong><br><a class="btn" href="https://kinescope.io/vdaaMBAV35rcFpZdGv9qC2" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>5) Функциональное упражнение 2</strong><br><a class="btn" href="https://kinescope.io/3fo8vYzq1GjVcgTdvAiCzY" target="_blank">Смотреть видео</a></div>
+
+  <p>Двигайтесь с удовольствием и будьте здоровы 💕</p>
+</div>
+
+<div id="arthrosis" class="card">
+  <h2>Артроз</h2>
+  <img src="arthrosis.jpg" alt="Артроз">
+  <p>Артроз — это постепенное разрушение хрящевой ткани суставов, что вызывает боль, отек, хруст и ограничение подвижности.</p>
+  <p>При артрозе, особенно на начальных стадиях, движение — основной способ лечения. Упражнения способны:<br>
+  ✔️ снизить боль<br>
+  ✔️ сохранить подвижность суставов<br>
+  ✔️ замедлить развитие заболевания<br>
+  ✔️ поддержать и улучшить качество жизни</p>
+
+  <div class="must">
+    <strong>❗️ Обязательно каждый день</strong><br>
+    Упражнения, отмеченные восклицательным знаком (<span class="req">❗️</span>), выполняются каждый день.<br>
+    Остальные упражнения тоже важны и выполняются хотя бы три раза в неделю.<br>
+    Можно не подряд, а точечно в течение дня: 1–2 минуты утром, 1–2 минуты днём, 1–2 минуты вечером = результат.
+  </div>
+
+  <p><span class="req">❗️</span> При артрозе особенно важна регулярность, ежедневное выполнение упражнений.</p>
+  <p><span class="req">❗️</span> Небольшие, 1–2 балла из 10, болевые ощущения могут быть. Важно, что они не нарастают выше этого уровня во время и после выполнения упражнений.</p>
+  <p><span class="req">❗️</span> Силовые упражнения выполняйте до лёгкой усталости мышц.</p>
+
+  <div class="video"><strong>1) <span class="req">❗️</span> Массаж стоп</strong><p>Предпочтительнее массаж руками. Можно иногда заменять массажем с помощью дополнительного оборудования.</p><a class="btn" href="https://kinescope.io/akKHTekmcjRTHYjcUMjczf" target="_blank">Смотреть видео: руками</a> <a class="btn secondary" href="https://kinescope.io/dWH8jQAo8DivUvXeTZa4Bs" target="_blank">Смотреть видео: оборудование</a></div>
+  <div class="video"><strong>2) <span class="req">❗️</span> Пассивная подвижность пальцев (для всех пальцев)</strong><br><a class="btn" href="https://kinescope.io/kBaijuzE1ziBm8qTgXzbfd" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>3) Отведение большого пальца (от варианта к варианту постепенно переходим)</strong><br><a class="btn" href="https://kinescope.io/8R4Yp61MSRiFnfsx3RL9Ap" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>4) Сгибание - разгибание пальцев</strong><br><a class="btn" href="https://kinescope.io/49aLSxgpvjjXzMX7Q8cZuq" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>5) Укрепление сгибателей пальцев + стабилизация большого пальца в приведении</strong><br><a class="btn" href="https://kinescope.io/2xKojhZGvk1Bef8fJwNyHk" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>6) Функциональное упражнение 1. Отработка фазы отталкивания в ходьбе</strong><br><a class="btn" href="https://kinescope.io/pMwPTXTsQmPqfvVgRJB8CR" target="_blank">Смотреть видео</a></div>
+
+  <p>Это упражнение — цель. К его комфортному выполнению мы будем постепенно стремиться.</p>
+  <p>Двигайтесь с удовольствием и будьте здоровы 💕</p>
+</div>
+
+<div id="taylor" class="card">
+  <h2>Деформация Тейлора</h2>
+  <img src="taylor.jpg" alt="Деформация Тейлора">
+  <p>Это деформация 5-го пальца стопы и пятой плюсневой кости (отклонение 5-й плюсневой кости наружу, а мизинца — внутрь), что сопровождается болевыми ощущениями и постепенно приводит к формированию «шишки» у основания мизинца.</p>
+  <p>Нашей задачей будет с помощью упражнений:<br>
+  ✔️ уменьшить или снять боль<br>
+  ✔️ уменьшить нагрузку на мизинец и 5ю плюсневую кость<br>
+  ✔️ правильно перераспределить нагрузку по стопе</p>
+
+  <div class="must">
+    <strong>❗️ Обязательно каждый день</strong><br>
+    Упражнения, отмеченные восклицательным знаком (<span class="req">❗️</span>), выполняются каждый день.<br>
+    Остальные упражнения тоже важны и выполняются хотя бы три раза в неделю.<br>
+    Можно не подряд, а точечно в течение дня: 1–2 минуты утром, 1–2 минуты днём, 1–2 минуты вечером = результат.
+  </div>
+
+  <div class="video"><strong>1) <span class="req">❗️</span> Массаж стоп</strong><p>Выбирайте безболезненные варианты: массаж руками или с помощью дополнительного оборудования.</p><a class="btn" href="https://kinescope.io/akKHTekmcjRTHYjcUMjczf" target="_blank">Смотреть видео: руками</a> <a class="btn secondary" href="https://kinescope.io/dWH8jQAo8DivUvXeTZa4Bs" target="_blank">Смотреть видео: оборудование</a></div>
+  <div class="video"><strong>2) Пассивное движение пальцев стопы</strong><br><a class="btn" href="https://kinescope.io/kBaijuzE1ziBm8qTgXzbfd" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>3) Подвижность голеностопа и средней части стопы</strong><br><a class="btn" href="https://kinescope.io/oi6UsURdxxmAvPkRFAfQnv" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>4) <span class="req">❗️</span> Укрепление малоберцовых мышц</strong><br><a class="btn" href="https://kinescope.io/9iv1nhTwL9mVJAxZ9T6eWr" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>5) Укрепление сгибателей стопы ("узкая стопа")</strong><br><a class="btn" href="https://kinescope.io/amgmL7beLtFyCDTXuecBEv" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>6) Укрепление сгибателей пальцев + стабилизация большого пальца в приведении</strong><br><a class="btn" href="https://kinescope.io/2xKojhZGvk1Bef8fJwNyHk" target="_blank">Смотреть видео</a></div>
+
+  <div class="later"><strong><span class="req">❗️</span> И как результат — безболезненное выполнение упражнений 7) и 8)</strong></div>
+
+  <div class="video"><strong>7) Подъём на носки с опорой на большой палец</strong><br><a class="btn" href="https://kinescope.io/gaQfX5waJfyjLtjNUqYTCG" target="_blank">Смотреть видео</a></div>
+  <div class="video"><strong>8) Функциональное упражнение 1. Отработка фазы отталкивания в ходьбе</strong><br><a class="btn" href="https://kinescope.io/pMwPTXTsQmPqfvVgRJB8CR" target="_blank">Смотреть видео</a></div>
+
+  <p>Вы отрабатываете упражнения 1) - 6) и периодически "пробуете" упражнения 7) и 8). Как только это становится возможным, безболезненным, лёгким — цель достигнута🎉</p>
+  <p>Двигайтесь с удовольствием и будьте здоровы💕</p>
+</div>
+
+<div class="card contacts" id="contacts">
+  <h2><strong>Связь с Еленой</strong></h2>
+  <p>Если у вас возникают вопросы по упражнениям, ощущениям, технике выполнения или ходу программы — вы всегда можете написать.</p>
+  <a href="mailto:spakhova_ea@mail.ru">Email: spakhova_ea@mail.ru</a>
+  <a href="https://t.me/spakhova_elena" target="_blank">Telegram канал</a>
+  <a href="https://t.me/Elena_Spakhova" target="_blank">Telegram для личных сообщений</a>
+  <a href="https://www.instagram.com/umnoe_telo_zdorovyi_mozg" target="_blank">Instagram</a>
+  <a href="https://dzen.ru/umnoe_telo_zdorovyi_mozg" target="_blank">Дзен</a>
+  <a href="https://max.ru/umnoe_telo_zdorovyi_mozg" target="_blank">MAX</a>
+  <a href="https://vk.com/telo.mozg" target="_blank">VK</a>
+</div>
+
+<div class="card final">
+  <strong>Двигайтесь с удовольствием и будьте здоровы 🤍</strong>
+  <p style="font-size:20px;margin-top:12px;"><strong>И помните: маленькие шаги каждый день дают большие изменения.</strong></p>
+</div>
+
+</body>
+</html>

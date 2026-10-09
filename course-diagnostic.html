@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Диагностическая тренировка — Елена Спахова</title>
+<meta name="description" content="Диагностическая тренировка: оценка осанки и движения, определение приоритетной цели и подбор безопасного плана работы.">
+<style>
+:root {
+  --bg:#f8f4f1;
+  --paper:#fff;
+  --ink:#1f1a17;
+  --muted:#6d625b;
+  --line:#eadfd8;
+  --accent:#b56b49;
+  --accent-dark:#9d593c;
+  --accent-soft:#efe4de;
+  --shadow:0 18px 60px rgba(85,52,35,.08);
+  --radius-xl:34px;
+  --radius-lg:28px;
+  --radius-md:22px;
+  --container:980px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--ink);
+  background:radial-gradient(circle at top, rgba(202,129,93,.14), transparent 34%), var(--bg);
+  line-height:1.6;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 22px}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(12px);
+  background:rgba(248,244,241,.82);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:18px}
+.brand{display:flex;align-items:center;gap:14px;font-weight:800;font-size:18px}
+.brand-mark{
+  width:54px;height:54px;border-radius:18px;
+  background:linear-gradient(135deg,#f2e6df,#f8f2ed);
+  display:grid;place-items:center;color:var(--accent);font-size:22px;flex:0 0 auto;
+}
+.brand-sub{display:block;color:var(--muted);font-weight:500;font-size:14px}
+.back-link{padding:12px 18px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:700}
+.hero{padding:42px 0 24px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:start}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.hero-copy{padding:34px}
+.eyebrow{
+  display:inline-flex;padding:10px 14px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent-dark);
+  font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px;
+}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.04;margin:0 0 16px}
+h2{font-size:28px;line-height:1.15;margin:0 0 18px}
+.lead{font-size:20px;color:var(--muted);margin:0 0 22px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;margin:18px 0 0}
+.meta-box{padding:14px 16px;border-radius:18px;background:#fbf8f6;border:1px solid var(--line);min-width:150px}
+.meta-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.meta-value{font-size:24px;font-weight:800;margin-top:4px}
+.hero-media{overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;min-height:340px}
+.section{padding:14px 0}
+.section-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.block{padding:30px}
+.block p,.block li{font-size:18px;color:var(--ink)}
+.block p{margin:0 0 16px}
+.block ul{margin:0;padding-left:24px}
+.block li{margin-bottom:12px}
+.note{
+  padding:18px 20px;border-radius:18px;background:#fff8f3;
+  border:1px solid #f0dfd3;color:var(--ink);font-size:17px;
+}
+.soft-box{padding:20px 22px;border-radius:22px;background:#fbf8f6;border:1px solid var(--line)}
+.mail-link{color:var(--accent);font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.buy-panel{padding:28px;text-align:center;background:linear-gradient(135deg,#fffaf6,#f7efe9)}
+.buy-panel h2{font-size:34px;margin:0 0 14px}
+.buy-panel p{font-size:18px;color:var(--muted);margin:0 0 18px}
+.btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.hero-copy .btn-row{justify-content:flex-start}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 26px;border-radius:999px;font-weight:800}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-secondary{background:#fff;border:1px solid var(--line)}
+.footer{padding:34px 0 48px;color:var(--muted);text-align:center}
+
+.diagnostic-grid{
+  grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+  align-items:stretch;
+}
+
+.diagnostic-grid .card{
+  height:100%;
+}
+
+.diagnostic-grid .block li{
+  margin-bottom:18px;
+}
+
+.cta-section{
+  padding-top:24px;
+}
+
+.cta-section .buy-panel{
+  max-width:860px;
+  margin:0 auto;
+}
+
+@media (max-width:860px){
+  .hero-grid,.section-grid{grid-template-columns:1fr}
+  .hero-media img{min-height:260px}
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">
+      <div class="brand-mark">✦</div>
+      <div>Елена Спахова<span class="brand-sub">Умное тело. Здоровый мозг | 40+</span></div>
+    </div>
+    <a class="back-link" href="поправить курсы.html#courses">← Ко всем курсам</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="card hero-copy">
+        <div class="eyebrow">С чего начать</div>
+        <h1>Диагностическая тренировка</h1>
+        <div class="note">
+          Мы оценим вашу осанку в статике и динамике, выявим двигательные и бытовые привычки, подберём первые упражнения и наметим понятный план дальнейшей работы.
+        </div>
+
+        <div class="meta">
+          <div class="meta-box">
+            <div class="meta-label">Формат</div>
+            <div class="meta-value">Очно/ онлайн 90 мин</div>
+          </div>
+          <div class="meta-box">
+            <div class="meta-label">Стоимость</div>
+            <div class="meta-value">4 500₽</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hero-media">
+        <img src="course-premium2.jpg" alt="Диагностическая тренировка">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-grid diagnostic-grid">
+      <div class="card block">
+        <h2>За 1,5 часа тренировки мы успеем:</h2>
+        <ul>
+          <li>обсудить особенности вашего здоровья, цели и задачи на ближайшее время и на перспективу</li>
+          <li>оценить осанку в статике и динамике - то, как нервная система выстраивает тело, когда вы себя не контролируете</li>
+          <li>оценить двигательные привычки, найти перегруженные и "спящие" зоны</li>
+          <li>выявим бытовые ежедневные нагрузки, которые усугубляют проблемы и мешают достичь результата</li>
+          <li>подобрать, выполнить и записать на видео несколько прицельных упражнений для регулярного выполнения</li>
+        </ul>
+      </div>
+
+      <div class="card block">
+        <h2>Что вы получите</h2>
+        <ul>
+          <li>понимание, с чего начать</li>
+          <li>приоритетную цель работы</li>
+          <li>первые индивидуально подобранные упражнения</li>
+          <li>рекомендации по дальнейшему формату: курс, клуб или индивидуальные тренировки</li>
+          <li>больше уверенности, что вы двигаетесь в правильную сторону</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="card buy-panel">
+      <h2>Записаться на диагностическую тренировку</h2>
+      <p>Напишите мне в Telegram, и мы договоримся о времени.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://t.me/Elena_Spakhova" target="_blank" rel="noreferrer">Записаться</a>
+        <a class="btn btn-secondary" href="course-premium.html">Назад к индивидуальным тренировкам</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer container">© 2026 Елена Спахова</footer>
+
+</body>
+</html>
